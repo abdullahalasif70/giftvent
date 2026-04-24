@@ -1,5 +1,6 @@
 import "./globals.css";
 import { AuthProvider } from "@/lib/authContext";
+import { CartProvider } from "@/lib/cartContext";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/Navbar";
 
@@ -10,11 +11,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#0D0D0D] text-[#F5F5F5] min-h-screen">
         <AuthProvider>
-          <Toaster position="top-center" toastOptions={{
-            style: { background: "#1A1A1A", color: "#F5F5F5", border: "0.5px solid #C6A962" }
-          }} />
-          <Navbar />
-          {children}
+          <CartProvider>
+            <Toaster position="top-center" toastOptions={{
+              style: { background: "#1A1A1A", color: "#F5F5F5", border: "0.5px solid #C6A962" }
+            }} />
+            <Navbar />
+            {children}
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>

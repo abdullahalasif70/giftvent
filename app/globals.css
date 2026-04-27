@@ -875,3 +875,38 @@ input::placeholder, textarea::placeholder {
 .gv-reminder-text strong {
   color: #F5F5F5;
 }
+.cart-btn {
+  background: transparent;
+  border: 0.5px solid #2a2a2a;
+  color: #888;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.cart-btn:hover {
+  border-color: #C6A962;
+  color: #C6A962;
+}
+
+.cart-count {
+  background: #C6A962;
+  color: #0D0D0D;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  font-family: Arial, sans-serif;
+}

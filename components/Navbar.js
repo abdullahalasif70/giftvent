@@ -36,21 +36,10 @@ export default function Navbar() {
           {isAdmin && <li><Link href="/admin" className="admin-link">Admin</Link></li>}
         </ul>
         <div className="gv-nav-btns">
-          {/* Cart Button */}
-          <button
-            onClick={() => setCartOpen(true)}
-            style={{background:"transparent",border:"0.5px solid #2a2a2a",color:"#888",padding:"0.5rem 0.9rem",cursor:"pointer",position:"relative",transition:"all 0.2s",display:"flex",alignItems:"center",gap:"0.5rem"}}
-            onMouseEnter={e => {e.currentTarget.style.borderColor="#C6A962";e.currentTarget.style.color="#C6A962"}}
-            onMouseLeave={e => {e.currentTarget.style.borderColor="#2a2a2a";e.currentTarget.style.color="#888"}}
-          >
-            <span style={{fontSize:"1rem"}}>🛒</span>
-            {count > 0 && (
-              <span style={{background:"#C6A962",color:"#0D0D0D",fontSize:"0.6rem",fontWeight:"700",width:"18px",height:"18px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",position:"absolute",top:"-6px",right:"-6px",fontFamily:"Arial,sans-serif"}}>
-                {count}
-              </span>
-            )}
+          <button onClick={() => setCartOpen(true)} className="cart-btn">
+            <span>🛒</span>
+            {count > 0 && <span className="cart-count">{count}</span>}
           </button>
-
           {user ? (
             <button onClick={handleLogout} className="btn-outline" style={{fontSize:"0.65rem",padding:"0.5rem 1.2rem"}}>Logout</button>
           ) : (
